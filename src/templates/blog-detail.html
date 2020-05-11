@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- Demo CSS -->
+<link rel="stylesheet" href="{% static 'css/demos/demo-church.css' %}">
+
+
+	<div class="body">
+
+		<div role="main" class="main">
+
+			<section class="section section-no-border custom-section-padding-4 m-none" style="background: url('img/demos/church/footer-bg.jpg'); background-size: cover;">
+				<div class="container">
+					<div class="row center">
+						<div class="col-md-12">
+							<h1 class="text-color-light custom-secondary-font font-weight-bold mb-xs">Blog</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section-no-border background-color-light m-none">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<article class="custom-post-event background-color-light">
+									<span class="custom-thumb-info-post-infos custom-blog-info">
+										<ul>
+											<li class="text-uppercase font-size-xs">
+												<i class="icon-calendar icons"></i>
+												{{ object.date|date:"M d, Y" }}
+											</li>
+										</ul>
+									</span>
+									<div class="post-event-content">
+										<h2 class="font-weight-bold text-color-dark">{{ object.title }}</h2>
+										<p>{{ object.description }}</p>
+										
+									</div>
+
+									<div class=" post-author custom-xs-ml-none mt-xl clearfix">
+										
+										<p><strong class="name mb-md text-color-dark">{{ user.username }}</strong></p>
+									</div>
+
+									<div class="post-block post-comments custom-xs-ml-none mt-xs clearfix">
+										<h4 class="font-weight-bold text-color-dark custom-primary-font font-size-md pt-sm mb-xlg">Comments</h4>
+
+										{% for comment in object2 %}
+
+										<ul class="comments custom-comments-style">
+											<li>
+												<div class="comment">
+													<div class="img-thumbnail custom-thumb-style-1 p-none">
+														<img class="avatar" alt="" src="{% static 'img/icons/user.jpg' %}">
+													</div>
+													<div class="comment-block">
+														<span class="comment-by">
+															<strong class="text-uppercase text-color-dark">{{ comment.comentor_name }}</strong>
+															
+														</span>
+														<p class="font-size-xs">{{ comment.message }}</p>
+														<span class="date pull-right font-size-xs mb-lg">{{ comment.date }}</span>
+													</div>
+												</div>
+
+											</li>
+										</ul>
+
+										{% endfor %}
+
+									</div>
+
+									<div class="post-block post-leave-comment custom-xs-ml-none pt-none">
+										<h4 class="font-weight-bold text-color-dark custom-primary-font font-size-md mt-xlg pt-sm mb-xlg">Leave a comment:</h4>
+
+										<form id="" action="{% url 'comment_create_view' %}" method="POST" class="custom-form-style-1">{% csrf_token %}
+											{{ form.as_p }}
+											<div class="row">
+												<input type="hidden" value="{{ object.pk }}" class="form-control" name="blog_id" >
+												<div class="form-group">
+													<div class="col-md-6">
+														<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="comentor_name" id="name" placeholder="Your Name" required>
+													</div>
+													<div class="col-md-6">
+														<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="Your E-mail" required>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12">
+														<textarea maxlength="5000" data-msg-required="Please enter your comment." rows="10" class="form-control" name="message" id="message" placeholder="Your message" required></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<input type="submit" value="Save" class="btn btn-primary custom-btn-style-1 text-uppercase pull-right" data-loading-text="Loading...">
+												</div>
+											</div>
+										</form>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section>
+
+	</div>
+
+
+
+	<!-- Demo -->
+	<script src="{% static 'js/demos/demo-church.js' %} "></script>
+
+{% endblock %}

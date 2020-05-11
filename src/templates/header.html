@@ -1,0 +1,129 @@
+{% load static %}
+<header id="header" class="header-narrow header-semi-transparent header-flex" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '0'}">
+	<div class="header-body">
+		<div class="header-container container">
+			<div class="header-row">
+				<div class="header-column">
+					<div class="header-logo">
+						<a href="{% url 'home' %}">
+							<img alt="Ziaul Commercial Learning" width="171" height="38" src="{% static 'img/logo.png' %}">
+						</a>
+					</div>
+				</div>
+				<div class="header-column">
+					<div class="header-row">
+						<div class="header-nav header-nav-stripe">
+							<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+								<i class="fa fa-bars"></i>
+							</button>
+							<ul class="header-social-icons social-icons hidden-xs">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+								<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+							<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1 collapse">
+								<nav>
+									<ul class="nav nav-pills" id="mainNav">
+										<li class="">
+											<a href="{% url 'home' %}">
+												Home
+											</a>
+										</li>
+										<li style="background-color: #89B837" class="dropdown dropdown-mega">
+                                            <a href="">
+												<strong style="padding-top: 6px" class="inverted">
+													<span class="word-rotate" data-plugin-options="{'delay': 2000, 'animDelay': 300}">
+														<span class="word-rotate-items">
+															<span>Subjects</span>
+															<span>Subjects</span>
+															<span>Subjects</span>
+														</span>
+													</span>				
+												</strong>
+                                                   
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="dropdown-mega-content">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                   
+                                                                    <div class="col-md-3">
+                                                                        <b>NC (BISE)</b>
+                                                                        <ul class="dropdown-mega-sub-nav">
+                                                                        	{% for nc in ncs %}
+                                                                            <li><a href="{% url 'subject-details_with_pk' curriculum='NC_BISE' subject=nc.subject %}">{{ nc.subject }}</a></li>
+                                                                            
+																			{% endfor %}
+
+                                                                        </ul>
+                                                                    </div>
+                                                                   
+                                                                    <div class="col-md-3">
+                                                                        <b>CIE</b>
+                                                                        <ul class="dropdown-mega-sub-nav">
+
+                                                                            {% for cie in cies %}
+                                                                            <li><a href="{% url 'subject-details_with_pk' curriculum='CIE' subject=cie.subject %}">{{ cie.subject }}</a></li>
+                                                                            
+																			{% endfor %}
+
+                                                                        </ul>
+                                                                    </div>
+                                                                   
+                                                                    <div class="col-md-3">
+                                                                        <b>Edexcel</b>
+                                                                        <ul class="dropdown-mega-sub-nav">
+
+                                                                            {% for edexcel in edexcels %}
+                                                                            <li><a href="{% url 'subject-details_with_pk' curriculum='Edexcel' subject=edexcel.subject %}">{{ edexcel.subject }}</a></li>
+                                                                            
+																			{% endfor %}
+                                                                            
+
+                                                                        </ul>
+                                                                    </div>
+                                                                   
+                                                                    <div class="col-md-3">
+                                                                        <b>IB</b>
+                                                                        <ul class="dropdown-mega-sub-nav">
+
+                                                                            {% for ib in ibs %}
+                                                                            <li><a href="{% url 'subject-details_with_pk' curriculum='IB' subject=ib.subject %}">{{ ib.subject }}</a></li>
+                                                                            
+																			{% endfor %}
+
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+										<!-- <li>
+											<a href="{% url 'about' %}">
+												About
+											</a>
+										</li> -->
+										<li>
+											<a href="{% url 'blog' %}">
+												Blog
+											</a>
+										</li>
+										<li>
+											<a href="{% url 'contact' %}">
+												Contact
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

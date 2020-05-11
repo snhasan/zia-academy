@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- Demo CSS -->
+<link rel="stylesheet" href="{% static 'css/demos/demo-church.css' %}">
+
+
+	<div class="body">
+
+		<div role="main" class="main">
+
+			<section class="section section-no-border custom-section-padding-4 m-none" style="background: url('img/demos/church/footer-bg.jpg'); background-size: cover;">
+				<div class="container">
+					<div class="row center">
+						<div class="col-md-12">
+							<h1 class="text-color-light custom-secondary-font font-weight-bold mb-xs">Blog</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section-no-border background-color-light m-none">
+				<div class="container">
+					
+					<div class="row">
+						{% for obj in object %}
+						<div class="col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 custom-sm-margin-bottom-1 custom-md-margin-bottom-1">
+							<article class="custom-post-blog">
+								<span class="thumb-info custom-thumb-info-2">
+									<span class="thumb-info-wrapper">
+										<a href="{% url 'blog-details_with_pk' pk=obj.pk %}">
+											<img src="{{ obj.images.url }}" alt class="img-responsive" />
+										</a>
+									</span>
+									<span class="thumb-info-caption custom-box-shadow">
+										<span class="thumb-info-caption-text">
+											<h4 class="font-weight-bold mb-lg">
+												<a href="{% url 'blog-details_with_pk' pk=obj.pk %}" class="text-decoration-none custom-secondary-font text-color-dark">
+													{{ obj.title }}
+												</a>
+											</h4>
+											<p>{{ obj.description|truncatewords:20 }}</p>
+										</span>
+										<span class="custom-thumb-info-post-infos center">
+											<ul>
+												<li class="text-uppercase">
+													<i class="icon-calendar icons"></i>
+													{{ obj.date }}
+												</li>
+												<li class="text-uppercase">
+													<i class="icon-user icons"></i>
+													{{ request.user.username }}
+												</li>
+											</ul>
+										</span>
+									</span>
+								</span>
+							</article>
+						</div>
+						{% endfor %}
+					</div>
+					
+				</div>
+			</section>
+
+	</div>
+
+
+
+	<!-- Demo -->
+	<script src="js/demos/demo-church.js' %} "></script>
+
+{% endblock %}
