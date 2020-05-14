@@ -200,7 +200,7 @@
 			<div class="col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 custom-sm-margin-bottom-1 custom-md-margin-bottom-1">
 				<article class="custom-post-blog">
 					<span class="thumb-info custom-thumb-info-2">
-						<span class="thumb-info-wrapper">
+						<span class="thumb-info-wrapper" style="max-height: 200px">
 							<a href="{% url 'blog-details_with_pk' pk=obj.pk %}">
 								<img src="{{ obj.images.url }}" alt class="img-responsive" />
 							</a>
@@ -212,7 +212,7 @@
 										{{ obj.title }}
 									</a>
 								</h4>
-								<p>{{ obj.description|truncatewords:20 }}</p>
+								<p>{{ obj.description|truncatechars:120 }}</p>
 							</span>
 							<span class="custom-thumb-info-post-infos center">
 								<ul>
