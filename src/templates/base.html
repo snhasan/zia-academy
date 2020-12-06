@@ -7,56 +7,33 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>Ziaul Commercial Learning</title>	
+		<title>{{ profile.name }}</title>	
 
-		<meta name="learning" content="learning" />
-		<meta name="description" content="education website">
-		<meta name="author" content="Ziaul Alam">
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/icon-logo.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+		<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css'>
+		<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<!-- Web Fonts  -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/animate/animate.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/simple-line-icons/css/simple-line-icons.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
 
-		<!-- Current Page CSS -->
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/settings.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/layers.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/navigation.css' %}">
 
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="{% static 'css/skins/skin-digital-agency.css' %}"> 
-
-		<!-- Demo CSS -->
-		<link rel="stylesheet" href="{% static 'css/demos/demo-digital-agency.css' %}">
-
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="{% static 'css/custom.css' %}">
-
-		<!-- Head Libs -->
-		<script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+		<script src="{% static 'js/index.js' %}"></script>
 
 	</head>
-	<body>
+	<body class="home4 page_list_posts page_detail pages_item page_event page_blog_detail event-detail">
 
 		<div class="body">
 			{% include 'header.html' %}
@@ -65,88 +42,120 @@
 			
 			{% endblock %}
 
-			<footer class="short" id="footer">
-				<div class="container">
+			<div class="footer">
+				<div class="container">	
 					<div class="row">
-						<div class="col-sm-2">
-							<a href="{% url 'home' %}" class="logo">
-								<img alt="Ziaul Commercial Learning" class="img-responsive" width="171" height="45" src="{% static 'img/logo.png' %}">
-							</a>
-						</div>
-						<div class="col-sm-1 col-sm-offset-6 align-right">
-						</div>
-						<div class="col-sm-3 align-right">
-							<h5 class="mb-sm">Mohammad Ziaul Alam</h5><br>
-							<span class="phone font-size-sm"><i class="fa fa-phone text-color-primary"></i> +880 19 7252 4004</span>
-							<span class="phone font-size-sm"><i class="fa fa-envelope text-color-primary"></i> zia524004@gmail.com</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<hr class="solid">
-							<div class="row">
-								<div class="col-md-6">
-									<p>© Ziaul Commercial Learning Services</p>
+						<div class="footer-1">
+							<div class="item col-md-4">
+								<div class="title">
+									<h3>Useful Links</h3>
 								</div>
-								<div class="col-md-6 align-right">
-									<ul class="social-icons pull-right">
-										<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-										<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-									</ul>
+								<ul class="us1">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Activities</a></li>
+									<li><a href="#">Gallery</a></li>
+									<li><a href="#">Programs</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+							<div class="item2 col-md-4">
+								<div class="title">
+									<h3>Latest Tweet</h3>
+								</div>
+								<p class="p1"><b>@WordPress :</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitre<br> <a href="#">http://t.co/B0aO4FrqN0</a><br> 18 hours ago</p>
+								<p class="p2"><b>@WordPress :</b> Lorem ipsum dolor sit amet, consetetur sadipscing elitre<br> <a href="#">http://t.co/B0aO4FrqN0</a><br> 18 hours ago</p>
+							</div>
+							<div class="item3 col-md-4">
+								<div class="title">
+									<a href=""><img src="../../images/logo_footer_green.png" alt=""></a>
+								</div>
+								<div class="pz">
+									<p>Lorem ipsum dolor sit amet conseteturop sapscing elitre sed diam eimod tempores einvidunt labore voluptua dolores.</p>
+								</div>
+								<div class="email email1">
+									<p><i class="fa fa-envelope-o"></i>Contact@Charitys.com</p>
+								</div>
+								<div class="email email2">
+									<p><i class="fa fa-phone"></i>(305) 123 456 789 - 888</p>
 								</div>
 							</div>
 						</div>
+						<div class="copyright">
+							<div class="social">
+								<div class="social1">
+									<a href=""><i class="fa fa-facebook"></i></a>
+									<a href=""><i class="fa fa-twitter"></i></a>
+									<a href=""><i class="fa fa-dribbble"></i></a>
+									<a href=""><i class="fa fa-google-plus"></i></a>
+									<a href=""><i class="fa fa-instagram"></i></a>
+								</div>
+							</div>
+							<div class="oxy">
+								<a href="#">Home</a>
+								<a href="#">About</a>
+								<a href="#">Activities</a>
+								<a href="#">Gallery</a>
+								<a href="#">Programs </a>
+								<a href="#">Contact Us  </a>
+							</div>
+							<!-- <div class="cpr">
+								<p><span>CharityPlus</span> by <span>SpyroPress</span>. All right Reserved</p>
+							</div> -->
+						</div>
 					</div>
 				</div>
-			</footer>
+			</div>
 		</div>
 
-		<!-- Vendor -->
-		<script src="{% static 'vendor/jquery/jquery.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.appear/jquery.appear.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery-cookie/jquery-cookie.min.js' %} "></script>
-		<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %} "></script>
-		<script src="{% static 'vendor/common/common.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.validation/jquery.validation.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.gmap/jquery.gmap.min.js' %} "></script>
-		<script src="{% static 'vendor/jquery.lazyload/jquery.lazyload.min.js' %} "></script>
-		<script src="{% static 'vendor/isotope/jquery.isotope.min.js' %} "></script>
-		<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %} "></script>
-		<script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %} "></script>
-		<script src="{% static 'vendor/vide/vide.min.js' %} "></script>
-		
-		<!-- Theme Base, Components and Settings -->
-		<script src="{% static 'js/theme.js' %} "></script>
-
-		<!-- Current Page Vendor and Views -->
-		<script src="{% static 'js/views/view.contact.js' %} "></script>
-		
-		<!-- Current Page Vendor and Views -->
-		<script src="{% static 'vendor/rs-plugin/js/jquery.themepunch.tools.min.js' %} "></script>
-		<script src="{% static 'vendor/rs-plugin/js/jquery.themepunch.revolution.min.js' %} "></script>
-		
-		<!-- Theme Custom -->
-		<script src="{% static 'js/custom.js' %} "></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="{% static 'js/theme.init.js' %} "></script>
-
-
-
-
-		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-			ga('create', 'UA-12345678-1', 'auto');
-			ga('send', 'pageview');
-		</script>
-		 -->
+<script type="text/javascript">
+		(function($){
+			$('#setting').on('click',function(e){
+				e.preventDefault();
+				$('.menu').slideToggle('slow');
+			});
+			$('#close').on('click',function(e){
+				e.preventDefault();
+				$('.menu').slideToggle('slow');
+			});
+			$('#sub_1').on('click',function(e){
+				e.preventDefault();
+				$('.sub1').slideToggle('slow');
+			});
+			$('#sub_2').on('click',function(e){
+				e.preventDefault();
+				$('.sub2').slideToggle('slow');
+			});
+			$('#sub_3').on('click',function(e){
+				e.preventDefault();
+				$('.sub3').slideToggle('slow');
+			});
+			$('#sub_4').on('click',function(e){
+				e.preventDefault();
+				$('.sub4').slideToggle('slow');
+			});
+			$('#sub_5').on('click',function(e){
+				e.preventDefault();
+				$('.sub5').slideToggle('slow');
+			});
+			$('#sub_6').on('click',function(e){
+				e.preventDefault();
+				$('.sub6').slideToggle('slow');
+			});
+			$('#quick-menu').on('click',function(e){
+				e.preventDefault();
+				$('.sub9').slideToggle('linear');
+			});
+			$(window).resize(function(){
+				if($(window).width()>1200){
+					$('.menu').css('display','block');
+				}
+				if($(window).width()<1200){
+					$('.menu').css('display','none');
+				}
+			});
+		})(jQuery);
+</script>
 
 
 	</body>

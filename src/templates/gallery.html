@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
+
+
+
+	<script src="{% static 'js/index.js' %}"></script>
+	<script src="{% static 'js/indgalleryex.js' %}"></script>
+	<script src="{% static 'js/gallery.js' %}"></script>
+	<script src="{% static 'js/index.js' %}"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}"> 
+
+
+<body class="page_event pages_item">
+<div class="bg_full_cp">
+	<div class="bg_full" style="background-image: url('../static/images/img/gr1.jpg'); background-repeat: no-repeat; background-position: center;">
+		<div class="container">
+			<div class="ct">
+				<h2 class="page_title">
+					<span>Gallery</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gallery_page">
+	<div class="container">
+		<div class="title">
+			<h3 style="text-align: center; padding-bottom: 15px; font-size: 50px; " ><b>Gallery</b></h3>
+		</div>
+		<div class="row">
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="{% static 'images/img/m1.jpg' %}" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="{% static 'images/img/p2.jpg' %}" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="{% static 'images/img/p4.jpg' %}" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery4.jpg" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery5.jpg" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery6.jpg" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery7.jpg" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery8.jpg" alt="">
+			</div>
+			<div class="img-gallery col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<img src="../../images/gallery9.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-cc" style="display: none;">
+	<div class="char-modal md-modal md-effect-1" id="modal-1">
+		<div class="md-content">
+			<button class="md-close"><i class="fa fa-times-circle"></i></button>
+		</div>
+	</div>
+
+</div>
+<div class="md-overlay" id="ov"></div>
+
+{% endblock %}
+

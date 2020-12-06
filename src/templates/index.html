@@ -1,239 +1,246 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/demos/demo-church.css' %}">
-<div role="main" class="main">
-	<div class="slider-container rev_slider_wrapper" style="height: 600px;">
-		<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 800, 'gridheight': 600}">
-			<ul>
-				<li data-transition="fade">
 
-					<img src="{% static 'img/slides/s1.jpg' %}"
-						alt=""
-						data-bgposition="center center" 
-						data-bgfit="cover" 
-						data-bgrepeat="no-repeat" 
-						data-kenburns="on"
-						data-duration="9000"
-						data-ease="Linear.easeNone"
-						data-scalestart="115"
-						data-scaleend="100"
-						data-rotatestart="0"
-						data-rotateend="0"
-						data-offsetstart="0 -200"
-						data-offsetend="0 200"
-						data-bgparallax="0"
-						class="rev-slidebg">
-
-					<div class="tp-caption tp-caption-overlay tp-caption-overlay-primary main-label"
-						data-x="center"
-						data-y="265"
-						data-start="1000"
-						data-whitespace="nowrap"						 
-						data-transform_in="y:[100%];s:500;"
-						data-transform_out="opacity:0;s:500;"
-						data-mask_in="x:0px;y:0px;">Ziaul Commercial Learning</div>
-
-					<div class="tp-caption tp-caption-overlay-opacity bottom-label"
-						data-x="center"
-						data-y="358"
-						data-start="2000"
-						data-transform_in="y:[100%];opacity:0;s:500;">READ, UNDERSTAND, LEARN AND EXPLORE</div>
-
-				</li>
-				<li data-transition="fade">
-					<img src="{% static 'img/slides/s2.jpg' %}" 
-						alt=""
-						data-bgposition="center center" 
-						data-bgfit="cover" 
-						data-bgrepeat="no-repeat" 
-						data-kenburns="on"
-						data-duration="9000"
-						data-ease="Linear.easeNone"
-						data-scalestart="115"
-						data-scaleend="100"
-						data-rotatestart="0"
-						data-rotateend="0"
-						data-offsetstart="0 400px"
-						data-offsetend="0 -400px"
-						data-bgparallax="0"
-						class="rev-slidebg">
-
-					<div class="tp-caption tp-caption-overlay tp-caption-overlay-primary main-label"
-						data-x="center"
-						data-y="265"
-						data-start="1000"
-						data-whitespace="nowrap"						 
-						data-transform_in="y:[100%];s:500;"
-						data-transform_out="opacity:0;s:500;"
-						data-mask_in="x:0px;y:0px;">Ziaul Commercial Learning</div>
-
-					<div class="tp-caption tp-caption-overlay-opacity bottom-label"
-						data-x="center"
-						data-y="358"
-						data-start="2000"
-						data-transform_in="y:[100%];opacity:0;s:500;">READ, UNDERSTAND, LEARN AND EXPLORE</div>
-				</li>
-			</ul>
-		</div>
+<div id="main" class="slideshow">
+	<div id="sync10" class="owl-carousel owl-theme">
+     	<div class="item" style="background-image: url(static/images/img/s1.jpg); width: 100%;">
+       		
+       		<div class="container">
+       			<div class="text_zz">
+       				<h3>Please help these<br> children to build<br> a better life.</h3>
+	       		</div>
+       		</div>
+     	</div>
+     	<div class="item" style="background-image: url(static/images/img/gr1.jpg); width: 100%;">
+       		<div class="container">
+       			<div class="text_zz">
+       				<h3>Please help these<br> children to build<br> a better life.</h3>
+	       		</div>
+       		</div>
+     	</div>
 	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 center">
-				<h2 class="mb-none mt-xl font-weight-semibold">Why Ziaul Commercial Learning</h2>
-				<div class="divider divider-primary divider-small divider-small-center mb-xl">
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
+</div>
 
-	<div class="container">
-		<div class="row mt-xl">
-			<div class="col-md-10 col-md-offset-1">
-
-				<div class="tabs tabs-bottom tabs-center tabs-simple mt-sm mb-xl">
-					<ul class="nav nav-tabs">
-						<li class="active">
-							<a href="#tabsNavigationSimpleIcons1" data-toggle="tab">
-								<span class="featured-boxes featured-boxes-style-6 p-none m-none">
-									<span class="featured-box featured-box-primary featured-box-effect-6 p-none m-none">
-										<span class="box-content p-none m-none">
-											<i class="icon-featured icon-bulb icons"></i>
-										</span>
-									</span>
-								</span>									
-								<p class="mb-none pb-none">Focused</p>
-							</a>
-						</li>
-						<li>
-							<a href="#tabsNavigationSimpleIcons2" data-toggle="tab">
-								<span class="featured-boxes featured-boxes-style-6 p-none m-none">
-									<span class="featured-box featured-box-primary featured-box-effect-6 p-none m-none">
-										<span class="box-content p-none m-none">
-											<i class="icon-featured fa fa-book"></i>
-										</span>
-									</span>
-								</span>									
-								<p class="mb-none pb-none">Well Documented</p>
-							</a>
-						</li>
-						<li>
-							<a href="#tabsNavigationSimpleIcons3" data-toggle="tab">
-								<span class="featured-boxes featured-boxes-style-6 p-none m-none">
-									<span class="featured-box featured-box-primary featured-box-effect-6 p-none m-none">
-										<span class="box-content p-none m-none">
-											<i class="icon-featured fa fa-handshake-o"></i>
-										</span>
-									</span>
-								</span>									
-								<p class="mb-none pb-none">Dependable</p>
-							</a>
-						</li>
-						<li>
-							<a href="#tabsNavigationSimpleIcons4" data-toggle="tab">
-								<span class="featured-boxes featured-boxes-style-6 p-none m-none">
-									<span class="featured-box featured-box-primary featured-box-effect-6 p-none m-none">
-										<span class="box-content p-none m-none">
-											<i class="icon-featured fa fa-outdent"></i>
-										</span>
-									</span>
-								</span>									
-								<p class="mb-none pb-none">Exclusive</p>
-							</a>
-						</li>
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane active" id="tabsNavigationSimpleIcons1">
-							<div class="center">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-							</div>
-						</div>
-						<div class="tab-pane" id="tabsNavigationSimpleIcons2">
-							<div class="center">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-							</div>
-						</div>
-						<div class="tab-pane" id="tabsNavigationSimpleIcons3">
-							<div class="center">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus.Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-							</div>
-						</div>
-						<div class="tab-pane" id="tabsNavigationSimpleIcons4">
-							<div class="center">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<section class="section section-default section-default-scale-8">
+<div class="">
+	<div class="careers">
 		<div class="container">
+			
+			<div class="title">
+				<h3 style="text-align: center;padding-top: 30px; padding-bottom: 55px; font-size: 40px; " ><b>About</b></h3>
+			</div>
 			<div class="row">
-				<div class="col-md-12 center">
-					<h2 class="mb-none mt-none font-weight-semibold text-light">MOHAMMAD ZIAUL ALAM</h2>
-					<div class="divider divider-primary divider-small divider-small-center mb-xl">
-						<hr>
-					</div>
-					<p class="mb-xlg text-light"><b>• Head of Economics at CIDER International School </b><br>• Former Head, Dept. of Economics at Presidency International School <br>• Former Executive, Corporate sales, Chittagong Region at Navana Group <br>• Former Junior Sales Officer at Newzealand Milk Ltd <br>• Studied Education at National University, Bangladesh <br>• Studied Marketing at Independent University, Bangladesh <br>• Studied Economics at National University, Bangladsh </p>
+				<div class="cosl col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="image-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<img src="{% static 'images/img/g1.jpg' %}" alt="">
+						</div>
+						<div class="content-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<h4>our goals</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-					<a style="border-radius: 3px;" class="btn btn-primary mt-xl mb-sm" href="{% url 'contact' %}">Say Hello <i class="fa fa-angle-right pl-xs"></i></a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</div>
+					</div>
+				</div>
+				<div class="cosl col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="content-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<h4>Mission Vision</h4>
+							<p>We’re seeking candidates who are ready to test their skills and make an impact in the real world. We are committed to growing and advancing people from within who have demonstrated the ability to deliver excellent results in different ways. Your success is ours, too.</p>
+						</div>
+						<div class="image-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<img src="{% static 'images/img/m1.jpg' %}" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="cosl col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="image-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<img src="{% static 'images/img/o1.jpg' %}" alt="">
+						</div>
+						<div class="content-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<h4>Obectives</h4>
+							<p>At Financial Solutions, we honor a work-life balance. We value the importance of your personal life because we’re people too. That’s why we enjoy a generous benefits program, including medical, dental, vision, life insurance, paid time off, and so much more.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
+	</div>
+</div>
+<div class="campaigns" style="background-color: #EFF1F2;
+    background-image: url(static/images/img/c1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 center">
-				<h2 class="mb-none mt-xl font-weight-semibold">Recent Blogs</h2>
-				<div class="divider divider-primary divider-small divider-small-center mb-xl">
-					<hr>
+			<div class="title">
+				<h3>Latest <b>Activities</b></h3>
+			</div>
+			<div id="sync1" class="owl-carousel owl-theme">
+				{% for activity in Activities %}
+				<div class="item">
+					<div class="z">
+						<div class="img">
+							<div class="img-1">
+								<img src="{{ activity.image.url }}"  alt="">
+							</div>
+						</div>
+						<div class="ct">
+							<div class="text_show">
+								<h3><a href="{% url 'activity-details_with_pk' pk=activity.pk %}">{{ activity.title }}</a></h3>
+								<p>{{ activity.summary|truncatechars:120  }}</p>
+							</div>
+							<br>
+							<br>
+
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="upcoming">
+	<div class="container">
+		<div class="row">
+			<div class="heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				 <h3 class="title">Event Video</h3>
+			</div>
+			<div class="i-gsc-column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<ul>
+					<li>
+						<div class="event-date">
+							<span>06/06/2017 - </span><time>15:00</time>
+						</div>
+						<div class="event-title">
+							<a>Our question reached the United Nations!</a>
+						</div>
+						<div class="event-body">
+							<p>Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla, vestibulum placerat metus mattis. Aenean dictum vitae nisl nec tempor.Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla, vestibulum placerat metus mattis. Aenean dictum vitae nisl nec tempor.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="i-gsc-column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="video-inner">
+					<video width="100%" height="100%" controls> 
+						<source src="{% static 'images/img/v1.mp4' %}" type="video/mp4" alt="">
+					</video>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			{% for obj in object %}
-			<div class="col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 custom-sm-margin-bottom-1 custom-md-margin-bottom-1">
-				<article class="custom-post-blog">
-					<span class="thumb-info custom-thumb-info-2">
-						<span class="thumb-info-wrapper" style="max-height: 200px">
-							<a href="{% url 'blog-details_with_pk' pk=obj.pk %}">
-								<img src="{{ obj.images.url }}" alt class="img-responsive" />
-							</a>
-						</span>
-						<span class="thumb-info-caption custom-box-shadow">
-							<span class="thumb-info-caption-text">
-								<h4 class="font-weight-bold mb-lg">
-									<a href="{% url 'blog-details_with_pk' pk=obj.pk %}" class="text-decoration-none custom-secondary-font text-color-dark">
-										{{ obj.title }}
-									</a>
-								</h4>
-								<p>{{ obj.description|truncatechars:120 }}</p>
-							</span>
-							<span class="custom-thumb-info-post-infos center">
-								<ul>
-									<li class="text-uppercase">
-										<i class="icon-calendar icons"></i>
-										{{ obj.date }}
-									</li>
-									<li class="text-uppercase">
-										<i class="icon-user icons"></i>
-										{{ request.user.username }}
-									</li>
-								</ul>
-							</span>
-						</span>
-					</span>
-				</article>
+	</div>
+</div>
+<div class="new grey">
+	<div id="sync11" class="owl-carousel owl-theme">
+		<div class="item">
+
+			<div class="bg_full" style="background-image: url(static/images/img/p1.jpg);">
 			</div>
-			{% endfor %}
+			<div class="content_box" style="background-color: #50AF4D">
+				<div class="content-inner">
+					 <div class="title">
+						<h2 style="color: #fff">Awareness Activities</h2>
+					</div>
+					<div class="desc">
+						<p style="color: #fff">Proin porta leo et facilisis pretium. Elements sapien neque mentm sapien et neque lobortis laoreet. Petesque habitant morbi tristique senectus et netus malesuada tristique senectus et netus</p>
+					</div>
+					<div class="donate">
+						<div class="button_donate">
+							<a href="">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="bg_full" style="background-image: url(static/images/img/s2.jpg);">
+			</div>
+			<div class="content_box" style="background-color:#50AF4D ">
+				<div class="content-inner">
+					 <div class="title">
+						<h2 style="color: #fff">Healthcare Activities</h2>
+					</div>
+					<div class="desc">
+						<p style="color: #fff">Proin porta leo et facilisis pretium. Elements sapien neque mentm sapien et neque lobortis laoreet. Petesque habitant morbi tristique senectus et netus malesuada tristique senectus et netus</p>
+					</div>
+					<div class="donate">
+						<div class="button_donate">
+							<a href="">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="bg_full" style="background-image: url(static/images/img/p3.jpg);">
+			</div>
+			<div class="content_box" style="background-color: #50AF4D ">
+				<div class="content-inner">
+					 <div class="title">
+						<h2 style="color: #fff">Educational Activities</h2>
+					</div>
+					<div class="desc">
+						<p style="color: #fff">Proin porta leo et facilisis pretium. Elements sapien neque mentm sapien et neque lobortis laoreet. Petesque habitant morbi tristique senectus et netus malesuada tristique senectus et netus</p>
+					</div>
+					<div class="donate">
+						<div class="button_donate">
+							<a href="">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
-	<script src="js/demos/demo-church.js' %} "></script>
+<div class="meet">
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h3><b>Gallery</b></h3>
+			</div>
+			<div id="sync3" class="owl-carousel owl-theme" >
+				<div class="item">
+					<div class="img">
+						<img src="{% static 'images/img/a3.jpg' %}" alt="">
+						<div class="social">
+							<span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="img">
+						<img src="{% static 'images/img/a3.jpg' %}" alt="">
+						<div class="social">
+							<span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+</div>
+
+<div class="ready">
+	<div class="container">
+		<div class="left col-md-6">
+			<h3>Are you ready to volunteer?</h3>
+		</div>
+		<div class="right col-md-6">
+			<div class="button_donate green">
+				<a href="#">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock content %}

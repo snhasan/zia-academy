@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="bg_full_cp">
+	<div class="bg_full" style="background-image: url('../static/images/img/gr1.jpg'); background-repeat: no-repeat; background-position: center;">
+		<div class="container">
+			<div class="ct">
+				<h2 class="page_title">
+					<span>Programs</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="event">
+	<div class="container">
+		<div class="title">
+				<h3 style="text-align: center; padding-bottom: 55px; font-size: 50px;margin-top: 50px; color: #000 " ><b>Programs</b></h3>
+			</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+				{% for program in programs %}	
+				<div class="item col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="event-block">
+						<div class="event-image">
+							<a href="{% url 'programs-details_with_pk' pk=program.pk %}"><img src="{{ program.image.url }}" alt=""></a>
+						</div>
+						<div class="event-content">
+							<div class="event-title">
+								<a href="{% url 'programs-details_with_pk' pk=program.pk %}"><span>{{ program.title }}</span></a>
+							</div>
+							<div class="event-body">
+								<p>{{ program.summary|truncatechars:120  }}</p>
+							</div>
+							<div class="readmore">
+								<a href="{% url 'programs-details_with_pk' pk=program.pk %}">Read more <i class="fa fa-arrow-right"></i></a>
+							</div>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+

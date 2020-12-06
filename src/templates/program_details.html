@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body class="page_blog_detail page_list_posts pages_item page_detail event-detail">
+<div class="bg_full_cp">
+	<div class="bg_full" style="background-image: url('/static/images/img/gr1.jpg'); background-repeat: no-repeat; background-position: center;">
+		<div class="container">
+			<div class="ct">
+				<h2 class="page_title">
+					<span>Programs</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="list_posts">
+	<div class="container">
+		<div class="title">
+			<h3 style="text-align: center; padding-bottom: 55px; font-size: 50px;margin-top: 50px; color: #000 " ><b>{{ obj.title }}</b></h3>
+		</div>
+		<div class="row">
+
+			<div class="main-content col-xs-12 col-md-10">
+				<div class="main-content-inner">
+					<div class="event_detail">
+						<div class="post-block">
+							<div class="post-image">
+								<a href=""><img src="{{ obj.image.url }}" alt=""></a>
+							</div>
+							<div class="post-content">
+								<div class="post-title">
+									<a href="">{{ obj.title }}</span></a>
+								</div>
+								<div class="post-meta">
+									<span>
+										<span>{{ obj.date|date:"M d, Y" }}</span>
+									</span>
+								</div>
+								<div class="post-body">
+								<p style="text-align: justify; font-weight: bold;"><b>{{ obj.summary }}</b></p>
+								<p style="text-align: justify;">{{ obj.description }}</p>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+

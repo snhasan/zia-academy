@@ -7,4 +7,4 @@ class upload_admin(admin.ModelAdmin):
 	list_display = ('title','subject','curriculum', 'date')
 	list_filter = ('date',)
 
-admin.site.register(upload,upload_admin)
+# admin.site.register(upload,upload_admin)

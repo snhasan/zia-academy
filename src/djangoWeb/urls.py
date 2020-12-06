@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view,about_view,blog_view,blog_details_views,contact_view,subject_view,sendMail
+from pages.views import home_view,about_view,contact_view,sendMail
+from pages.views import activities_view,activities_details_view,gallery_view,programs_view,programs_details_view,contact_form_view
 from myBlogs.views import blog_view
 from myBlogs.views import blog_details_view
 from blogComment.views import comment_create_view
+
+from django.contrib.auth import views as auth_views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,13 +31,20 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
     path('about/', about_view, name='about'),
-    path('blog/', blog_view, name='blog'),
+    path('gallery/', gallery_view, name='gallery'),
+    path('programs/', programs_view, name='programs'),
+    path('programs-details/<int:pk>/', programs_details_view, name='programs-details_with_pk'),
+    path('activities/', activities_view, name='activities'),
+    path('activity-details/<int:pk>/', activities_details_view, name='activity-details_with_pk'),
     path('email_send/', sendMail, name='email_send'),
-    path('subject-details/<curriculum>/<subject>/', subject_view, name='subject-details_with_pk'),
+    path('contact_form_view/', contact_form_view, name='contact_form_view'),
     path('contact/', contact_view, name='contact'),
-    path('blog-details/<int:pk>/', blog_details_view, name='blog-details_with_pk'),
-    path('blog-details/', comment_create_view, name='comment_create_view'),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+
+    path('reset_password/', auth_views.PasswordResetView.as_view(), name="reset_password"),
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

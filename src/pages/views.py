@@ -1,123 +1,162 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+from django.db import models
+from django.http import HttpResponseRedirect
+
+from .forms import ContactFormSave
+
 
 from myBlogs.models import myBlog
 from uploads.models import upload
+from pages.models import About,Team,faq,services,Profile,Activitie,Program,ContactForm
 from django.core.mail import send_mail
 
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
-	obj = myBlog.objects.order_by("-date")[:3]
+	Activities = Activitie.objects.order_by("-date")[:3]
 
-	ncs = upload.objects.filter(
-	    curriculum='NC_BISE'
-	).values('subject').distinct()
+	service = services.objects.all()
+	servs = services.objects.order_by("-date")[:6]
 
-	cies = upload.objects.filter(
-	    curriculum='CIE'
-	).values('subject').distinct()
+	about = About.objects.latest("date")
+	profile = Profile.objects.latest("date")
+	teams = Team.objects.order_by("-date")[:4]
 
-	edexcels = upload.objects.filter(
-	    curriculum='Edexcel'
-	).values('subject').distinct()
-
-	ibs = upload.objects.filter(
-	    curriculum='IB'
-	).values('subject').distinct()
+	faqs = faq.objects.order_by("-date")[:4]
 
 	context = {
-	'object' : obj,
-	'ncs' : ncs,
-	'cies' : cies,
-	'edexcels' : edexcels,
-	'ibs' : ibs
+	'Activities' : Activities,
+	'service' : service,
+	'about' : about,
+	'teams':teams,
+	'servs': servs,
+	'profile' : profile,
+	'faqs' : faqs
 	}
 
 	return render(request, "index.html", context)
 
 def about_view(request, *args, **kwargs):
 
-	ncs = upload.objects.filter(
-	    curriculum='NC_BISE'
-	).values('subject').distinct()
+	service = services.objects.all()
 
-	cies = upload.objects.filter(
-	    curriculum='CIE'
-	).values('subject').distinct()
-
-	edexcels = upload.objects.filter(
-	    curriculum='Edexcel'
-	).values('subject').distinct()
-
-	ibs = upload.objects.filter(
-	    curriculum='IB'
-	).values('subject').distinct()
+	about = About.objects.latest("date")
+	teams = Team.objects.all()
+	profile = Profile.objects.latest("date")
 
 	context = {
-	'ncs' : ncs,
-	'cies' : cies,
-	'edexcels' : edexcels,
-	'ibs' : ibs
+	
+	'service' : service,
+	'about' : about,
+	'teams' : teams,
+	'profile' : profile
 	}
 
 	return render(request, "about.html", context)
 
-def subject_view(request, curriculum, subject):
+def programs_view(request, *args, **kwargs):
 
-	ncs = upload.objects.filter(
-	    curriculum='NC_BISE'
-	).values('subject').distinct()
+	programs = Program.objects.all()
 
-	cies = upload.objects.filter(
-	    curriculum='CIE'
-	).values('subject').distinct()
+	profile = Profile.objects.latest("date")
 
-	edexcels = upload.objects.filter(
-	    curriculum='Edexcel'
-	).values('subject').distinct()
-
-	ibs = upload.objects.filter(
-	    curriculum='IB'
-	).values('subject').distinct()
-
-	topics = upload.objects.filter(
-		curriculum=curriculum, subject=subject) 
 
 	context = {
-	'ncs' : ncs,
-	'cies' : cies,
-	'edexcels' : edexcels,
-	'ibs' : ibs,
-	'topics' : topics
+	'programs' : programs,
+	'profile' : profile,
 	}
 
-	return render(request, "subject-details.html", context)
+	return render(request, "programs.html", context)
+	
+
+def programs_details_view(request, pk=None):
+
+
+	obj = Program.objects.get(pk=pk)
+	programs = Program.objects.order_by("-date")[:4]
+	profile = Profile.objects.latest("date")
+
+	context = {
+	'programs' : programs,
+	'obj' : obj,
+	'profile' : profile,
+	}
+
+	return render(request, "program_details.html", context)
+
+def gallery_view(request, *args, **kwargs):
+
+	service = services.objects.all()
+
+	about = About.objects.latest("date")
+	teams = Team.objects.all()
+	profile = Profile.objects.latest("date")
+
+	context = {
+	
+	'service' : service,
+	'about' : about,
+	'teams' : teams,
+	'profile' : profile
+	}
+
+	return render(request, "gallery.html", context)
+
+
+def activities_view(request,  *args, **kwargs):
+
+	Activities = Activitie.objects.all()
+	profile = Profile.objects.latest("date")
+
+
+	context = {
+	'Activities' : Activities,
+	'profile' : profile,
+	}
+
+	return render(request, "activities.html", context)
+
+
+def activities_details_view(request, pk=None):
+
+
+	obj = Activitie.objects.get(pk=pk)
+	Activities = Activitie.objects.order_by("-date")[:4]
+	profile = Profile.objects.latest("date")
+
+	context = {
+	'Activities' : Activities,
+	'profile' : profile,
+	'obj' : obj,
+	}
+
+	return render(request, "activities-details.html", context)
 
 def contact_view(request, *args, **kwargs):
 
-	ncs = upload.objects.filter(
-	    curriculum='NC_BISE'
-	).values('subject').distinct()
-
-	cies = upload.objects.filter(
-	    curriculum='CIE'
-	).values('subject').distinct()
-
-	edexcels = upload.objects.filter(
-	    curriculum='Edexcel'
-	).values('subject').distinct()
-
-	ibs = upload.objects.filter(
-	    curriculum='IB'
-	).values('subject').distinct()
+	service = services.objects.all()
+	profile = Profile.objects.latest("date")
 
 	context = {
-	'ncs' : ncs,
-	'cies' : cies,
-	'edexcels' : edexcels,
-	'ibs' : ibs
+	'service' : service,
+	'profile' : profile
+	}
+
+	return render(request, "contact.html", context)
+
+def contact_form_view(request, pk=None):
+
+	form = ContactFormSave(request.POST or None)
+	if form.is_valid():
+		form.save()
+
+
+	profile = Profile.objects.latest("date")
+	
+	context = {
+	'profile' : profile
 	}
 
 	return render(request, "contact.html", context)
@@ -131,27 +170,13 @@ def blog_details_views(request, *args, **kwargs):
 
 def sendMail(request):
 
-	ncs = upload.objects.filter(
-	    curriculum='NC_BISE'
-	).values('subject').distinct()
-
-	cies = upload.objects.filter(
-	    curriculum='CIE'
-	).values('subject').distinct()
-
-	edexcels = upload.objects.filter(
-	    curriculum='Edexcel'
-	).values('subject').distinct()
-
-	ibs = upload.objects.filter(
-	    curriculum='IB'
-	).values('subject').distinct()
+	service = services.objects.all()
+	profile = Profile.objects.latest("date")
 
 	context = {
-	'ncs' : ncs,
-	'cies' : cies,
-	'edexcels' : edexcels,
-	'ibs' : ibs
+
+	'service' : service,
+	'profile' : profile
 	}
 
 

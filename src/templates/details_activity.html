@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body class="page_about pages_item">
+<div class="bg_full_cp">
+	<div class="bg_full" style="background-image: url('../static/images/img/gr1.jpg'); background-repeat: no-repeat; background-position: center;">
+		<div class="container">
+			<div class="ct">
+				<h2 class="page_title">
+					<span>Activities</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<body class="page_campaigns pages_item">
+
+<div class="campaigns">
+	<div class="container">
+		<div class="title">
+				<h3 style="text-align: center; padding-bottom: 55px; font-size: 50px;margin-top: 20px; color: #000 " ><b>Activities</b></h3>
+			</div>
+		<div class="row">
+			<div id="syncz" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="row">
+					
+				{% for activity in Activities %}	
+				<div class="item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="z">
+						<div class="img">
+							<div class="img-1">
+								<img src="{{ activity.image.url }}" alt="">
+							</div>
+						</div>
+						<div class="ct">
+							<div class="text_show">
+								<h3><a href="{% url 'activity-details_with_pk' pk=activity.pk %}">{{ activity.title }}</a></h3>
+								<p>{{ activity.summary|truncatechars:120  }}</p>
+							</div>
+							<br>
+							<br>
+							<div class="donate">
+								<div class="button_donate">
+									<a href="{% url 'activity-details_with_pk' pk=activity.pk %}">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
